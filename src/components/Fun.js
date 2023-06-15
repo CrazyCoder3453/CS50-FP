@@ -1,13 +1,21 @@
-import React from 'react'
-import styled from 'styled-components'
-import Card from './Card'
+import React from "react";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import Ad from "./Ad";
+import Card from "./Card";
+import { styled } from "styled-components";
 
-function Popular() {
+function Fun() {
   return (
     <Container>
-        <h2>Popular Items</h2>
+      <Header />
+      <Bottom>
+        <Sidebar />
+        <div>
+          <Ad />
 
-        <Cards>
+          <h2>Fun Additions! 🎉</h2>
+          <Cards>
             <Card 
                 src='/images/cs50-duck.webp'
                 name='CS50 Rubber Duck'
@@ -24,15 +32,22 @@ function Popular() {
                 price='$9.99'
             />
         </Cards>
+        </div>
+      </Bottom>
     </Container>
-  )
+  );
 }
 
-export default Popular
+export default Fun;
 
-const Container = styled.div`
+const Container = styled.div``;
+const Bottom = styled.div`
+  display: flex;
+
+  h2 {
     padding: 12px;
-`
+  }
+`;
 
 const Cards = styled.div`
     display: flex;

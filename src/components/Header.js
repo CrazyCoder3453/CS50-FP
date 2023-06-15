@@ -6,17 +6,19 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
         <Container>
+          <LinkStyled to="/">
           <Logo>
             <p>shop</p>
             <p>50</p>
           </Logo>
+          </LinkStyled>
           <Options>
-            <p>Fun Additions</p>
-            <p>Wonderful Shirts</p>
-            <p>Certificates</p>
+            <LinkStyled to="/fun"><p>Fun Additions</p></LinkStyled>
+            <LinkStyled to="/merch"><p>CS50 Merch</p></LinkStyled>
+            <LinkStyled to="/certificates"><p>Certificates</p></LinkStyled>
           </Options>
           <EndMessage>
-            <p>This was CS50!</p>
+            <p>This was CS50x!</p>
           </EndMessage>
         </Container>
   );
@@ -32,6 +34,10 @@ const Container = styled.div`
   color: white;
   justify-content: space-evenly;
 `;
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
+`
 const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -47,6 +53,10 @@ const Logo = styled.div`
     font-size: 28px;
     font-weight: bold;
     color: white;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 
